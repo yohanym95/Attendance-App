@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AttendenceApp</string>
+
+    <string-array name="login_type">
+        <item>Admin</item>
+        <item>Student</item>
+        <item>Teacher</item>
+    </string-array>
+</resources>
+
