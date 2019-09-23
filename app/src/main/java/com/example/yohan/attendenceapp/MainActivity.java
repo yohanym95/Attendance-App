@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         myList.add("Teachers");
         myList.add("Student");
-        myList.add("Attendence");
+        myList.add("Student Attendence");
+        myList.add("Teacher Attendence");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.select_dialog_item,myList);
         listView.setAdapter(arrayAdapter);
@@ -58,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 }else if(position == 2){
                     Intent i = new Intent(MainActivity.this,attendence.class);
                     startActivity(i);
+                }else if(position == 3){
+                    Intent i = new Intent(MainActivity.this,teacher_Attendence.class);
+                    startActivity(i);
                 }
+
 
             }
         });
