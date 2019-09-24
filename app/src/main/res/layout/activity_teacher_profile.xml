@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherProfile">
+    tools:context=".StudentProfile"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvTeacherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="23dp"
+        android:gravity="center"
+        android:textColor="#571C63"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnTeacherDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See Your Details"
+        android:layout_margin="23dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:id="@+id/detailsTeacherLyout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="23dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/detailsTeacherName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#571C63"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            />
+<!--        <TextView-->
+<!--            android:id="@+id/detailsTeacherRegNo"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textColor="#571C63"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            />-->
+        <TextView
+            android:id="@+id/detailsTeacherEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#571C63"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            />
+        <TextView
+            android:id="@+id/detailsTeacherCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#571C63"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMarkTeacherAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark Your Attendance"
+        android:layout_margin="23dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+
+</LinearLayout>

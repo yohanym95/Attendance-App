@@ -36,7 +36,7 @@ import java.util.Map;
 public class teacher_Attendence extends AppCompatActivity implements StuAttendanceAdapter.onItemClicked{
     private TextView tvDate;
     private ImageView ivCalendar;
-    String Date;
+    String Date,month1,day;
     private CalendarView calendarView;
     private Button btnCourse,btnStuAttendance;
     private CheckBox CBCis,CBNr,CBPst,CBSppm,CBFst;
@@ -183,7 +183,23 @@ public class teacher_Attendence extends AppCompatActivity implements StuAttendan
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                Date = year+"/"+(month+1)+"/"+dayOfMonth;
+                month +=1;
+
+                if(month < 10){
+                    month1 = "0"+month;
+
+                }else {
+                    month1 = String.valueOf(month);
+                }
+
+                if(dayOfMonth < 10){
+                    day = "0"+dayOfMonth;
+
+                }else {
+                    day = String.valueOf(dayOfMonth);
+                }
+
+                Date = year+" / "+(month1)+" / "+day;
             }
         });
 

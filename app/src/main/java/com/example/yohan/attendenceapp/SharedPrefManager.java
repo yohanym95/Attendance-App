@@ -21,7 +21,6 @@ public class SharedPrefManager {
     private SharedPrefManager(Context context) {
         ctx = context;
 
-
     }
 
     public static synchronized SharedPrefManager getInstance(Context context) {
