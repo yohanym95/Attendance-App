@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
 
         <TextView
             android:id="@+id/tvAttendanceName"
@@ -19,7 +20,7 @@
             android:layout_margin="5dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/background_dark"/>
+            android:textColor="#F7F3F3"/>
 
 
         <TextView
@@ -29,7 +30,7 @@
             android:layout_margin="5dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/background_dark"/>
+            android:textColor="#F7F3F3"/>
 
 
 

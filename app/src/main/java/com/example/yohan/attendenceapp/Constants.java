@@ -16,4 +16,8 @@ public class Constants {
     public static final String URL_TEACHER_LOG = ROOT_URL+"teacherLogin.php";
     public static final String URL_ADD_STUDENT_ATTENDANCE = ROOT_URL+"addStudentAttendance.php";
     public static final String URL_ADD_Teacher_ATTENDANCE = ROOT_URL+"addTeacherAttendance.php";
+    public static final String URL_UPDATE_STUDENT_PASSWORD= ROOT_URL+"updateStudentPassword.php";
+    public static final String URL_UPDATE_TEACHER_PASSWORD= ROOT_URL+"updateTeacherPassword.php";
+    public static final String URL_UPDATE_ADMIN_PASSWORD= ROOT_URL+"updateAdminPassword.php";
+
 }

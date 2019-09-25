@@ -3,6 +3,7 @@ package com.example.yohan.attendenceapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,6 +42,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ActionBar actionBar = getSupportActionBar();
+        // actionBar.setIcon(R.drawable.landscape);
+        actionBar.setTitle("Login");
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         logButton = findViewById(R.id.logButton);
         logEmail = findViewById(R.id.LogEmail);

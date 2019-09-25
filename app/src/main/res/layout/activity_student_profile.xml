@@ -26,6 +26,8 @@
         android:textSize="25dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:background="#774ACA"
+        android:textColor="@android:color/background_light"
         />
 
     <LinearLayout
@@ -34,7 +36,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="23dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <TextView
             android:id="@+id/detailsStudentName"
@@ -85,6 +88,8 @@
         android:textSize="25dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:background="#774ACA"
+        android:textColor="@android:color/background_light"
         />
 
 

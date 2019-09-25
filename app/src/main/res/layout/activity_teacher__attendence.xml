@@ -40,7 +40,8 @@
                     android:layout_weight="3"
                     android:gravity="center"
                     android:text="Date"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:textColor="@color/colorPrimary"/>
 
 
             </LinearLayout>
@@ -64,7 +65,8 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="CIS"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimary"/>
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/teaattendanceCBCIS"
@@ -78,7 +80,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -88,7 +90,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="NR"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimary"/>
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/teaattendanceCBNR"
@@ -101,7 +104,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -111,7 +114,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="PST"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimary"/>
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/teaattendanceCBPST"
@@ -124,7 +128,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -134,7 +138,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="FST"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimary"/>
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/teaattendanceCBFST"
@@ -147,7 +152,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -155,7 +160,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:text="SSPE"
                         android:textSize="15dp" />
 
@@ -163,7 +168,8 @@
                         android:id="@+id/teaattendanceCBSSPE"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textColor="@color/colorPrimary"/>
 
                 </LinearLayout>
 
@@ -180,12 +186,15 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="Teacher Attendence"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:background="#774ACA"
+                android:textColor="@android:color/background_light"/>
         </LinearLayout>
     </ScrollView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvteaAttendance"
+        android:background="#F2EDF3"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

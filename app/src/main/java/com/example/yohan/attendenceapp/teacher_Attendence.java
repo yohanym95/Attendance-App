@@ -203,7 +203,7 @@ public class teacher_Attendence extends AppCompatActivity implements StuAttendan
             }
         });
 
-      //  calendarView.setOn
+      //calendarView.setOn
         myDialog.setView(myCustomlayout);
 
         myDialog.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
