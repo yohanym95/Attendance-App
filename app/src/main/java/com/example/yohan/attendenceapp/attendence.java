@@ -42,7 +42,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
     private ImageView ivCalendar;
     String Date,month1,day;
     private CalendarView calendarView;
-    private Button btnCourse,btnStuAttendance;
+    private Button btnCourse,btnStuAttendance,btnStuAbsent;
     private CheckBox CBCis,CBNr,CBPst,CBSppm,CBFst;
     String cource;
     String course,date;
@@ -62,6 +62,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
         ivCalendar = findViewById(R.id.ivCalenderView);
        // btnCourse = findViewById(R.id.btnCourse);
         btnStuAttendance = findViewById(R.id.btnstuAttendance);
+        btnStuAbsent = findViewById(R.id.btnstuAbsent);
         CBCis = findViewById(R.id.attendanceCBCIS);
         CBNr = findViewById(R.id.attendanceCBNR);
         CBFst = findViewById(R.id.attendanceCBFST);
@@ -75,6 +76,33 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
 
         mRequestQueue = Volley.newRequestQueue(this);
 
+        btnStuAbsent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(CBCis.isChecked()){
+
+                    cource = "CIS";
+                }else if(CBNr.isChecked()){
+
+                    cource = "NR";
+                }else if(CBPst.isChecked()){
+
+
+                    cource = "PST";
+
+                }else if(CBSppm.isChecked()){
+
+                    cource= "Sport";
+                }else if(CBFst.isChecked()){
+
+                    cource = "FST";
+                }
+                date = tvDate.getText().toString().trim();
+                course = cource;
+                list.clear();
+                parseJson1(Date,cource);
+            }
+        });
 
 
 
@@ -149,6 +177,60 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
                     adapter = new StuAttendanceAdapter(list,attendence.this);
                     recyclerView.setAdapter(adapter);
                     adapter.SetOnItemClickListener(attendence.this);
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+            }
+        }
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("date",date);
+                params.put("course",course);
+
+                return params;
+            }
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+    private void parseJson1(final String date, final String course) {
+        String url = Constants.URL_GET_STUDENT_ABSENT;
+
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.i("Course :-", "["+response+"]");
+                        try{
+                            JSONObject OBJ = new JSONObject(response);
+                            JSONArray jsonArray = OBJ.getJSONArray("attendance");
+                            Log.i("Course :-", "["+jsonArray+"]");
+
+                            for (int i=0;i<jsonArray.length();i++){
+                                JSONObject student = jsonArray.getJSONObject(i);
+
+                                String name = student.getString("stuName");
+                                String RegNo = student.getString("stuRegNo");
+//                        mItemList.add(new items(imageURL,creatorNmae,likes));
+                                list.add(new StuAttendanceModel(name,RegNo));
+
+                            }
+
+                            adapter = new StuAttendanceAdapter(list,attendence.this);
+                            recyclerView.setAdapter(adapter);
+                            adapter.SetOnItemClickListener(attendence.this);
 
                         }catch (JSONException e){
                             e.printStackTrace();

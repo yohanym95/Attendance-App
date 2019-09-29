@@ -19,5 +19,7 @@ public class Constants {
     public static final String URL_UPDATE_STUDENT_PASSWORD= ROOT_URL+"updateStudentPassword.php";
     public static final String URL_UPDATE_TEACHER_PASSWORD= ROOT_URL+"updateTeacherPassword.php";
     public static final String URL_UPDATE_ADMIN_PASSWORD= ROOT_URL+"updateAdminPassword.php";
+    public static final String URL_GET_STUDENT_ABSENT = ROOT_URL+"getStudentAbsent.php";
+    public static final String URL_GET_TEACHER_ABSENT = ROOT_URL+"getTeacherAbsent.php";
 
 }
