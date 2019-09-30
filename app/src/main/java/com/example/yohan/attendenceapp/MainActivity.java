@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,9 +21,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private ListView listView;
-    private ArrayList<String> myList;
+    CardView teacher,student,teacherAtten,studentAtten;
+    TextView tvTeacher,tvStudent,tvTeacherAtten,tvStudentAtten;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,39 +35,88 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
-        mAuth = FirebaseAuth.getInstance();
+        teacher = findViewById(R.id.teacherMain);
+        student = findViewById(R.id.studentMain);
+        teacherAtten = findViewById(R.id.teacherAttendanceMain);
+        studentAtten = findViewById(R.id.studentAttendanceMain);
 
-        listView = findViewById(R.id.admin_list);
-        myList = new ArrayList<>();
+        tvTeacher = findViewById(R.id.tvteacherMain);
+        tvStudent = findViewById(R.id.tvstudentMain);
+        tvTeacherAtten = findViewById(R.id.tvteacherAttendanceMain);
+        tvStudentAtten = findViewById(R.id.tvstudentAttendanceMain);
 
-        myList.add("Teachers");
-        myList.add("Student");
-        myList.add("Student Attendence");
-        myList.add("Teacher Attendence");
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.select_dialog_item,myList);
-        listView.setAdapter(arrayAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        teacher.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
-                    Intent i = new Intent(MainActivity.this,Teachers.class);
-                    startActivity(i);
-                }else if(position == 1){
-                    Intent i = new Intent(MainActivity.this,Students.class);
-                    startActivity(i);
-                }else if(position == 2){
-                    Intent i = new Intent(MainActivity.this,attendence.class);
-                    startActivity(i);
-                }else if(position == 3){
-                    Intent i = new Intent(MainActivity.this,teacher_Attendence.class);
-                    startActivity(i);
-                }
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Teachers.class);
+                startActivity(i);
+            }
+        });
 
+
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Students.class);
+                startActivity(i);
 
             }
         });
+
+        teacherAtten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,teacher_Attendence.class);
+                startActivity(i);
+            }
+        });
+
+        studentAtten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,attendence.class);
+                startActivity(i);
+            }
+        });
+
+
+        tvTeacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Teachers.class);
+                startActivity(i);
+
+            }
+        });
+
+        tvStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Students.class);
+                startActivity(i);
+            }
+        });
+
+        tvTeacherAtten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,teacher_Attendence.class);
+                startActivity(i);
+
+            }
+        });
+
+        tvStudentAtten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,attendence.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
         
 
 

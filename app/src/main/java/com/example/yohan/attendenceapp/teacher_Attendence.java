@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,7 +39,7 @@ public class teacher_Attendence extends AppCompatActivity implements StuAttendan
     private ImageView ivCalendar;
     String Date,month1,day;
     private CalendarView calendarView;
-    private Button btnCourse,btnStuAttendance,btnTeaAbsent;
+    private ImageButton btnStuAttendance,btnTeaAbsent;
     private CheckBox CBCis,CBNr,CBPst,CBSppm,CBFst;
     String cource;
     String course,date;
@@ -170,6 +171,7 @@ public class teacher_Attendence extends AppCompatActivity implements StuAttendan
                             adapter = new StuAttendanceAdapter(list,teacher_Attendence.this);
                             recyclerView.setAdapter(adapter);
                             adapter.SetOnItemClickListener(teacher_Attendence.this);
+                            Toast.makeText(teacher_Attendence.this,"Present Teacher List",Toast.LENGTH_LONG).show();
 
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -224,6 +226,7 @@ public class teacher_Attendence extends AppCompatActivity implements StuAttendan
                             adapter = new StuAttendanceAdapter(list,teacher_Attendence.this);
                             recyclerView.setAdapter(adapter);
                             adapter.SetOnItemClickListener(teacher_Attendence.this);
+                            Toast.makeText(teacher_Attendence.this,"Absent Teacher List",Toast.LENGTH_LONG).show();
 
                         }catch (JSONException e){
                             e.printStackTrace();

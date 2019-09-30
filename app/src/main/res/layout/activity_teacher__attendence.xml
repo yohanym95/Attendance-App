@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageButton
                     android:id="@+id/btnteaAttendance"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -192,10 +192,11 @@
                     android:gravity="center"
                     android:text="Present"
                     android:textSize="25dp"
-                    android:background="#774ACA"
+                    android:background="#38AC3D"
+                    android:src="@drawable/ic_check_black_24dp"
                     android:textColor="@android:color/background_light"/>
 
-                <Button
+                <ImageButton
                     android:id="@+id/btnteabsent"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -205,9 +206,9 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:text="Absent"
+                    android:src="@drawable/ic_close_black_24dp"
                     android:textSize="25dp"
-                    android:background="#774ACA"
+                    android:background="#C41708"
                     android:textColor="@android:color/background_light"/>
 
             </LinearLayout>

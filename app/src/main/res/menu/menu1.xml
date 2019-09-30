@@ -8,4 +8,9 @@
         app:showAsAction="never"
         android:title="Logout" />
 
+    <item
+        android:id="@+id/main_Refresh"
+        app:showAsAction="never"
+        android:title="Refresh" />
+
 </menu>

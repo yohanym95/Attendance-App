@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +43,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
     private ImageView ivCalendar;
     String Date,month1,day;
     private CalendarView calendarView;
-    private Button btnCourse,btnStuAttendance,btnStuAbsent;
+    private ImageButton btnStuAttendance,btnStuAbsent;
     private CheckBox CBCis,CBNr,CBPst,CBSppm,CBFst;
     String cource;
     String course,date;
@@ -101,6 +102,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
                 course = cource;
                 list.clear();
                 parseJson1(Date,cource);
+
             }
         });
 
@@ -177,6 +179,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
                     adapter = new StuAttendanceAdapter(list,attendence.this);
                     recyclerView.setAdapter(adapter);
                     adapter.SetOnItemClickListener(attendence.this);
+                    Toast.makeText(attendence.this,"Present Student List",Toast.LENGTH_LONG).show();
 
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -231,6 +234,7 @@ public class attendence extends AppCompatActivity  implements StuAttendanceAdapt
                             adapter = new StuAttendanceAdapter(list,attendence.this);
                             recyclerView.setAdapter(adapter);
                             adapter.SetOnItemClickListener(attendence.this);
+                            Toast.makeText(attendence.this,"Absent Student List",Toast.LENGTH_LONG).show();
 
                         }catch (JSONException e){
                             e.printStackTrace();

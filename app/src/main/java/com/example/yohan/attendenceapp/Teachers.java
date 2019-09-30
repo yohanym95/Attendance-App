@@ -94,7 +94,7 @@ public class Teachers extends AppCompatActivity implements TeacherAdapter.onItem
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu1,menu);
         return  true;
     }
 
@@ -102,13 +102,18 @@ public class Teachers extends AppCompatActivity implements TeacherAdapter.onItem
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-//        if(item.getItemId() == R.id.main_logout){
-//            mAuth.getInstance().signOut();
-//            Intent i = new Intent(Teachers.this,Login.class);
-//            startActivity(i);
-//        }
-
+        switch (item.getItemId()){
+            case R.id.main_logout:
+                SharedPrefManager.getInstance(this).logout();
+                finish();
+                startActivity(new Intent(this,Login.class));
+                break;
+            case R.id.main_Refresh:
+                parseJson();
+                break;
+        }
         return true;
+
     }
 
 
