@@ -1,5 +1,5 @@
 # Attendance-App
-This is a android attendance app and create by using android and PHP.
+This is a android attendance app and create by using android and PHP.also Use Volley Library for get JSON data and send request.
 
    - it mark daily attendence of students and will show present and absent student sepreatly. 
    - Use QR Code for mark student attendance. 
